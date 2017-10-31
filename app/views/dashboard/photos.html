@@ -1,0 +1,13 @@
+<div dw-loading="loadingChat" dw-loading-options="{text: 'Loading Photos...'}" class="photos-page">
+	<div class="row">
+		<div class="col-sm-6">
+			<input placeholder="Search" type="text" ng-model="filterText" ng-change="onFilterChanged(filterText)"/>
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-warning" ng-click="showAddPhoto()" aria-label="Left Align">
+				<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Add
+			</a>
+		</div>
+	</div>
+	<div ag-grid="gridOptions" class="ag-blue photos-table"></div>
+</div>

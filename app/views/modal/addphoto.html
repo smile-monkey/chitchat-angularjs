@@ -1,0 +1,44 @@
+<div class="modal-content" dw-loading="AddingPhoto" dw-loading-options="{text: 'Uploading Photo...'}">
+	<div class="modal-header">
+		<button type="button" class="btn close" ng-click="closeModal()">Close</button>
+		<h3 class="modal-title text-center">New story</h3>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" id="story_form">
+		  <div class="form-group">
+			<label for="story_location_id" class="col-sm-4 control-label">Story Location ID:</label>
+			<div class="col-sm-8">
+			  <input type="text" class="form-control" id="story_location_id"
+				ng-model='story.story_location_id' placeholder="Story Location ID">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label for="story_user_id" class="col-sm-4 control-label">Story User ID:</label>
+			<div class="col-sm-8">
+			  <input type="text" class="form-control" id="story_user_id"
+				ng-model='story.story_user_id' placeholder="Story User ID">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label for="story_type" class="col-sm-4 control-label">Story Type:</label>
+			<div class="col-sm-8">
+			  <input type="text" class="form-control" id="story_type" disabled
+				ng-model='story.story_type' value="1" placeholder="Story Type">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-4 col-sm-8">
+				<a class='btn btn-primary btn-photo-file' href='javascript:;'>
+					Choose Photo...
+					<input type="file" name="story_main" size="40" multiple
+						onchange='angular.element(this).scope().prepareUpload(this.files)'>
+				</a>
+				<span class='label label-info' id="upload-file-info"></span>
+			</div>
+		  </div>
+		</form>
+	</div>
+	<div class="modal-footer text-center">
+		<button class="btn  btn-default" ng-click="submit()">Submit</button>
+	</div>
+</div>
